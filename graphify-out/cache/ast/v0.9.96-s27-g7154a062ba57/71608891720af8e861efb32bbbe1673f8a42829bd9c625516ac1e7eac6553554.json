@@ -1,0 +1,807 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "label": "UserServiceImpl.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "label": "UserServiceImpl",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "userservice",
+      "label": "UserService",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "service",
+      "label": "Service",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "requiredargsconstructor",
+      "label": "RequiredArgsConstructor",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "slf4j",
+      "label": "Slf4j",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "antipattern",
+      "label": "AntiPattern",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "userrepository",
+      "label": "UserRepository",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "scheduler",
+      "label": "Scheduler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "label": ".getAllUsers()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L27",
+      "_java_ret": "Flux",
+      "_callable": true
+    },
+    {
+      "id": "flux",
+      "label": "Flux",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "userdto",
+      "label": "UserDto",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "override",
+      "label": "Override",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "label": ".getUser()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L45",
+      "_java_ret": "Mono",
+      "_callable": true
+    },
+    {
+      "id": "mono",
+      "label": "Mono",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java"
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "antipattern",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "tenantcontext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "tenantcontextholder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "userdto",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "tenantcontextmissingexception",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "userrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "userservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "requiredargsconstructor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "slf4j",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "service",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "flux",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "mono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "scheduler",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "optional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "userservice",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "service",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "requiredargsconstructor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "slf4j",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "userrepository",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "scheduler",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "target": "flux",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "target": "userdto",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "target": "override",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "target": "mono",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "target": "userdto",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "target": "override",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "attribute"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "subscribeOn",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "flatMapMany",
+        [
+          "call",
+          "doOnNext",
+          [
+            "call",
+            "map",
+            [
+              "call",
+              "switchIfEmpty",
+              [
+                "call",
+                "defer",
+                [
+                  "type",
+                  "Mono"
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "flatMapMany",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "doOnNext",
+        [
+          "call",
+          "map",
+          [
+            "call",
+            "switchIfEmpty",
+            [
+              "call",
+              "defer",
+              [
+                "type",
+                "Mono"
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "doOnNext",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "map",
+        [
+          "call",
+          "switchIfEmpty",
+          [
+            "call",
+            "defer",
+            [
+              "type",
+              "Mono"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "switchIfEmpty",
+        [
+          "call",
+          "defer",
+          [
+            "type",
+            "Mono"
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "switchIfEmpty",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "defer",
+        [
+          "type",
+          "Mono"
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "defer",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": "Mono",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "justOrEmpty",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": "Mono",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "getContext",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L29",
+      "receiver": "TenantContextHolder",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L30",
+      "receiver": "Mono",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "TenantContextMissingException",
+      "is_member_call": false,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L30",
+      "receiver": null,
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L31",
+      "receiver": "log",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L32",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "fromIterable",
+        [
+          "type",
+          "Flux"
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "fromIterable",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L32",
+      "receiver": "Flux",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getallusers",
+      "callee": "findAllByTenantId",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L32",
+      "receiver": "userRepository",
+      "lang": "java",
+      "receiver_type": "UserRepository"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "orElseThrow",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L56",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "map",
+        [
+          "call",
+          "ofNullable",
+          [
+            "type",
+            "Optional"
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L56",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "ofNullable",
+        [
+          "type",
+          "Optional"
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "ofNullable",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L56",
+      "receiver": "Optional",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "getContext",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L56",
+      "receiver": "TenantContextHolder",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "TenantContextMissingException",
+      "is_member_call": false,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L57",
+      "receiver": null,
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "orElseGet",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L58",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "map",
+        [
+          "call",
+          "map",
+          [
+            "call",
+            "ofNullable",
+            [
+              "type",
+              "Optional"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L58",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "map",
+        [
+          "call",
+          "ofNullable",
+          [
+            "type",
+            "Optional"
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "map",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L58",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "ofNullable",
+        [
+          "type",
+          "Optional"
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "ofNullable",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L58",
+      "receiver": "Optional",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_service_antipattern_userserviceimpl_userserviceimpl_getuser",
+      "callee": "findByIdAndTenantId",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "source_location": "L58",
+      "receiver": "userRepository",
+      "lang": "java",
+      "receiver_type": "UserRepository"
+    }
+  ],
+  "member_field_tables": [
+    {
+      "lang": "java",
+      "class_label": "UserServiceImpl",
+      "source_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/service/antipattern/UserServiceImpl.java",
+      "fields": {
+        "userRepository": "UserRepository",
+        "scheduler": "Scheduler"
+      }
+    }
+  ]
+}

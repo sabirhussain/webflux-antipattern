@@ -54,6 +54,18 @@ class UserServiceImplTest {
     }
 
     @Test
+    void shouldReturnEmptyWhenUserDoesNotExistForTenant() {
+        when(userRepository.findByIdAndTenantId(1L, 42L)).thenReturn(null);
+
+        StepVerifier.create(userService.getUser(1L)
+                        .contextWrite(Context.of(TenantContext.class, new TenantContext(42L))))
+                .expectNextCount(0)
+                .verifyComplete();
+
+        verify(userRepository).findByIdAndTenantId(1L, 42L);
+    }
+
+    @Test
     void shouldReturnUsersForTenantIdInReactorContext() {
         Instant createdAt = Instant.parse("2024-01-01T00:00:00Z");
         User user = user(1L, 42L, "jdoe", "jdoe@example.com", createdAt);
@@ -105,6 +117,35 @@ class UserServiceImplTest {
 
         StepVerifier.create(result.contextWrite(Context.of(TenantContext.class, new TenantContext(42L))))
                 .expectNext(UserDto.from(user))
+                .verifyComplete();
+    }
+
+    @Test
+    void shouldNotLeakTenantAcrossReusedWorkerThread() {
+        // Arrange
+        Instant createdAt = Instant.parse("2024-01-01T00:00:00Z");
+        User user1 = user(1L, 42L, "jdoe", "jdoe@example.com", createdAt);
+        when(userRepository.findByIdAndTenantId(1L, 42L)).thenReturn(user1);
+
+        User user2 = user(2L, 43L, "asmith", "asmith@example.com", createdAt);
+        when(userRepository.findByIdAndTenantId(2L, 43L)).thenReturn(user2);
+
+        UserServiceImpl service = new UserServiceImpl(userRepository, Schedulers.newSingle("test-worker"));
+
+        // Act
+        Mono<Long> tenant42 = service.getUser(1L).contextWrite(Context.of(TenantContext.class, new TenantContext(42L)))
+                .map(UserDto::tenantId);
+
+        Mono<Long> tenant43 = service.getUser(2L).contextWrite(Context.of(TenantContext.class, new TenantContext(43L)))
+                .map(UserDto::tenantId);
+
+        // Assert
+        StepVerifier.create(tenant42)
+                .expectNext(42L)
+                .verifyComplete();
+
+        StepVerifier.create(tenant43)
+                .expectNext(43L)
                 .verifyComplete();
     }
 }

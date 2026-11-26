@@ -1,0 +1,151 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_java",
+      "label": "UserRepository.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "label": "UserRepository",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L13",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "jparepository",
+      "label": "JpaRepository",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "user",
+      "label": "User",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findallbytenantid",
+      "label": ".findAllByTenantId()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L14",
+      "_callable": true
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findbyidandtenantid",
+      "label": ".findByIdAndTenantId()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L16",
+      "_java_ret": "User",
+      "_callable": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_java",
+      "target": "user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_java",
+      "target": "jparepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_java",
+      "target": "list",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "target": "jparepository",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "target": "user",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findallbytenantid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findallbytenantid",
+      "target": "user",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findbyidandtenantid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_repository_userrepository_userrepository_findbyidandtenantid",
+      "target": "user",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/repository/UserRepository.java",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "return_type"
+    }
+  ],
+  "raw_calls": []
+}

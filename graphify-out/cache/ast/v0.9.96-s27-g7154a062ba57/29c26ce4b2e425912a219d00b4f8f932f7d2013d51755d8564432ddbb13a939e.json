@@ -1,0 +1,267 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "label": "TenantResource.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "label": "TenantResource",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "restcontroller",
+      "label": "RestController",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "requestmapping",
+      "label": "RequestMapping",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "requiredargsconstructor",
+      "label": "RequiredArgsConstructor",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "tenantservice",
+      "label": "TenantService",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "label": ".getAllTenants()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L17",
+      "_java_ret": "Flux",
+      "_callable": true
+    },
+    {
+      "id": "flux",
+      "label": "Flux",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "tenantdto",
+      "label": "TenantDto",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    },
+    {
+      "id": "getmapping",
+      "label": "GetMapping",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java"
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "tenantdto",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "tenantservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "requiredargsconstructor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "getmapping",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "requestmapping",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "restcontroller",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "flux",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "target": "restcontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "target": "requestmapping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "target": "requiredargsconstructor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "target": "tenantservice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "target": "flux",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "target": "tenantdto",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "target": "getmapping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "attribute"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_resource_tenantresource_tenantresource_getalltenants",
+      "callee": "getAllTenants",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "source_location": "L19",
+      "receiver": "tenantService",
+      "lang": "java",
+      "receiver_type": "TenantService"
+    }
+  ],
+  "member_field_tables": [
+    {
+      "lang": "java",
+      "class_label": "TenantResource",
+      "source_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/resource/TenantResource.java",
+      "fields": {
+        "tenantService": "TenantService"
+      }
+    }
+  ]
+}

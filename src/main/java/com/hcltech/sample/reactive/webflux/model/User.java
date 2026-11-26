@@ -2,6 +2,7 @@ package com.hcltech.sample.reactive.webflux.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 
@@ -14,14 +15,17 @@ import java.time.Instant;
 @Entity
 @Table(name = "users")
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public final class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @EqualsAndHashCode.Include
     @Column(name = "tenant_id", nullable = false)
     private long tenantId;
 
+    @EqualsAndHashCode.Include
     @Column(unique = true)
     private String username;
 

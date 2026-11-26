@@ -3,6 +3,8 @@ package com.hcltech.sample.reactive.webflux.resource;
 import com.hcltech.sample.reactive.webflux.dto.UserDto;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -72,6 +74,32 @@ class UserResource_IT {
                 });
     }
 
+    private static void assertBadRequestForMissingTenantHeader(WebTestClient webTestClient, String uri) {
+        webTestClient.get().uri(uri)
+                .exchange()
+                .expectStatus().isBadRequest()
+                .expectBody()
+                .jsonPath("$.error").isEqualTo("Bad Request");
+    }
+
+    private static void assertBadRequestForInvalidTenantHeader(WebTestClient webTestClient, String uri) {
+        webTestClient.get().uri(uri)
+                .header("X-Tenant-ID", "invalid")
+                .exchange()
+                .expectStatus().isBadRequest()
+                .expectBody()
+                .jsonPath("$.error").isEqualTo("Bad Request");
+    }
+
+    private static void assertNotFoundForNonexistentUser(WebTestClient webTestClient) {
+        webTestClient.get().uri("/users/1")
+                .header("X-Tenant-ID", "10000000")
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody()
+                .jsonPath("$.error").isEqualTo("Not Found");
+    }
+
     @Nested
     @ActiveProfiles("antipattern")
     class AntipatternProfile {
@@ -89,31 +117,34 @@ class UserResource_IT {
             assertSingleTenantOneUserReturned(webTestClient);
         }
 
+        @ParameterizedTest
+        @ValueSource(strings = {"/users", "/users/1"})
+        void shouldReturnBadRequestForMissingTenantHeader(String uri) {
+            assertBadRequestForMissingTenantHeader(webTestClient, uri);
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"/users", "/users/1"})
+        void shouldReturnBadRequestForInvalidTenantHeader(String uri) {
+            assertBadRequestForInvalidTenantHeader(webTestClient, uri);
+        }
+
+        @Test
+        void shouldReturnNotFoundForNonexistentUser() {
+            assertNotFoundForNonexistentUser(webTestClient);
+        }
+
         /*
-         * Exception to "prefer the real production wiring in an integration test": this profile's
-         * UserServiceImpl is the one implementation whose correctness depends on which physical
-         * thread ends up running TenantContextHolder.getContext() - it reads an
-         * InheritableThreadLocal and then hops onto Schedulers.boundedElastic(), a pooled scheduler
-         * that reuses worker threads across unrelated requests (see
-         * service/antipattern/UserServiceImplTest for the full explanation and a deterministic
-         * reproduction of the resulting stale-tenant bug).
+         * Exception to "prefer the real production wiring in an integration test":
+         * the antipattern UserServiceImpl reads tenant information from an InheritableThreadLocal,
+         * so behaviour depends on the worker thread that executes the service logic (see service/antipattern/UserServiceImplTest).
          *
-         * Without this override, this profile's production SchedulerConfig bean supplies the real,
-         * process-wide Schedulers.boundedElastic() singleton - the exact same singleton instance
-         * that every other Spring context in this JVM (including RecommendedProfile's) and every
-         * other test in the whole module may have already used. Which worker thread a request lands
-         * on, and what that worker happens to have inherited, would then depend on prior, unrelated
-         * activity on that shared singleton - something this test has no control over and cannot
-         * see. These tests only ever send tenant "1", so that happens not to surface as a visible
-         * failure today, but the underlying nondeterminism would still be there, waiting to make
-         * this suite flaky the moment someone varies the tenant across requests.
+         * Production uses a pooled bounded-elastic Scheduler whose threads are reused.
+         * Replacing it with a dedicated single-thread Scheduler makes execution deterministic
+         * and removes thread-selection variability from these tests.
          *
-         * Swapping in a dedicated, test-owned single-thread Scheduler removes that dependency: this
-         * context gets its own worker thread, created only once something in this test actually
-         * subscribes, so its behaviour depends solely on what this test does - not on global JVM
-         * state left behind by other tests. RecommendedProfile needs no such override because its
-         * UserServiceImpl resolves the tenant via Reactor Context, which travels with the
-         * subscription regardless of which thread executes it.
+         * RecommendedProfile needs no such override because it resolves the tenant
+         * from Reactor Context rather than thread-local state.
          */
         @TestConfiguration
         static class DeterministicSchedulerTestConfig {
@@ -146,6 +177,23 @@ class UserResource_IT {
         @Test
         void shouldReturnSingleUserByIdForTenantFromHeader() {
             assertSingleTenantOneUserReturned(webTestClient);
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"/users", "/users/1"})
+        void shouldReturnBadRequestForMissingTenantHeader(String uri) {
+            assertBadRequestForMissingTenantHeader(webTestClient, uri);
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"/users", "/users/1"})
+        void shouldReturnBadRequestForInvalidTenantHeader(String uri) {
+            assertBadRequestForInvalidTenantHeader(webTestClient, uri);
+        }
+
+        @Test
+        void shouldReturnNotFoundForNonexistentUser() {
+            assertNotFoundForNonexistentUser(webTestClient);
         }
     }
 }

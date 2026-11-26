@@ -1,13 +1,15 @@
-package com.hcltech.sample.reactive.webflux.service;
+package com.hcltech.sample.reactive.webflux.service.antipattern;
 
 import com.hcltech.sample.reactive.webflux.dto.TenantDto;
 import com.hcltech.sample.reactive.webflux.model.Tenant;
 import com.hcltech.sample.reactive.webflux.repository.TenantRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 import java.time.Instant;
@@ -58,5 +60,30 @@ class TenantServiceImplTest {
 
         StepVerifier.create(tenantService.getAllTenants())
                 .verifyComplete();
+    }
+
+    @Test
+    void shouldCallRepositoryBeforeSubscription() {
+        when(tenantRepository.findAll()).thenReturn(List.of());
+
+        Flux<TenantDto> flux = tenantService.getAllTenants();
+
+        Assertions.assertNotNull(flux);
+        //No subscription has been made yet, repository should not have been called.
+        verify(tenantRepository).findAll();
+    }
+
+    @Test
+    void shouldFailSecondSubscriptionOnGetAllTenants() {
+        when(tenantRepository.findAll()).thenReturn(List.of());
+
+        Flux<TenantDto> flux = tenantService.getAllTenants();
+
+        StepVerifier.create(flux).verifyComplete();
+
+        // Second subscription should fail due to stream already being operated upon or closed.
+        StepVerifier.create(flux)
+                .expectError(IllegalStateException.class)
+                .verify();
     }
 }

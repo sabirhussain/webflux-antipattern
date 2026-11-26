@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_java",
+      "label": "TenantContextMissingException.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/exception/TenantContextMissingException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_tenantcontextmissingexception",
+      "label": "TenantContextMissingException",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/exception/TenantContextMissingException.java",
+      "source_location": "L3",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_tenantcontextmissingexception_tenantcontextmissingexception",
+      "label": ".TenantContextMissingException()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/exception/TenantContextMissingException.java",
+      "source_location": "L4",
+      "_callable": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_tenantcontextmissingexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/exception/TenantContextMissingException.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_tenantcontextmissingexception",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_exception_tenantcontextmissingexception_tenantcontextmissingexception_tenantcontextmissingexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/exception/TenantContextMissingException.java",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

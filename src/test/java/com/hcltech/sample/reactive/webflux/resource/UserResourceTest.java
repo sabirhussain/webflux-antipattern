@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -71,10 +72,12 @@ class UserResourceTest {
     }
 
     @Test
-    void shouldReturnEmptyMonoWhenUserNotFound() {
+    void shouldReturnErrorWhenUserNotFound() {
         when(userService.getUser(1L)).thenReturn(Mono.empty());
 
         StepVerifier.create(userResource.getUser(1L))
-                .verifyComplete();
+                .verifyErrorMatches(throwable -> throwable instanceof org.springframework.web.server.ResponseStatusException &&
+                        ((org.springframework.web.server.ResponseStatusException) throwable).getStatusCode() == HttpStatus.NOT_FOUND &&
+                        "User not found for ID: 1".equals(((org.springframework.web.server.ResponseStatusException) throwable).getReason()));
     }
 }
