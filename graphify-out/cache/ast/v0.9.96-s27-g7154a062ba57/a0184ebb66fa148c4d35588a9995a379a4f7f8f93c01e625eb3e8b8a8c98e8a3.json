@@ -1,0 +1,282 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_java",
+      "label": "TenantContextHolder.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "label": "TenantContextHolder",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "noargsconstructor",
+      "label": "NoArgsConstructor",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java"
+    },
+    {
+      "id": "tenantcontext",
+      "label": "TenantContext",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_removecontext",
+      "label": ".removeContext()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L12",
+      "_callable": true
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "label": ".setContext()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L17",
+      "_callable": true
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_getcontext",
+      "label": ".getContext()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L32",
+      "_java_ret": "TenantContext",
+      "_callable": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_java",
+      "target": "accesslevel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_java",
+      "target": "noargsconstructor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "noargsconstructor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "tenantcontext",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "tenantcontext",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_removecontext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "target": "tenantcontext",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_getcontext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_getcontext",
+      "target": "tenantcontext",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "target": "tenantcontext",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_removecontext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L41",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_removecontext",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L13",
+      "receiver": "CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_removecontext",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L14",
+      "receiver": "INHERITABLE_CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "callee": "set",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L24",
+      "receiver": "CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L25",
+      "receiver": "INHERITABLE_CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "callee": "set",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L27",
+      "receiver": "INHERITABLE_CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_setcontext",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L28",
+      "receiver": "CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_getcontext",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L33",
+      "receiver": "CONTEXT",
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontextholder_tenantcontextholder_getcontext",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContextHolder.java",
+      "source_location": "L35",
+      "receiver": "INHERITABLE_CONTEXT",
+      "lang": "java"
+    }
+  ]
+}

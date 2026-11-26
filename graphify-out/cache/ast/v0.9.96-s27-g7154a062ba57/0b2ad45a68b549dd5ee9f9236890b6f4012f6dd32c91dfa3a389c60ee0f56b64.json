@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontext_java",
+      "label": "TenantContext.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContext.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontext_tenantcontext",
+      "label": "TenantContext",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContext.java",
+      "source_location": "L3",
+      "_callable": true,
+      "_callable_class": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontext_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_ctx_tenantcontext_tenantcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/ctx/TenantContext.java",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,6 +1,8 @@
 spring:
   application:
     name: webflux-antipattern
+  profiles:
+    default: antipattern
   sql:
     init:
       mode: always

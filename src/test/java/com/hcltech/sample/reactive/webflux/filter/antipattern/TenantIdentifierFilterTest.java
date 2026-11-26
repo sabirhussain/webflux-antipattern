@@ -2,6 +2,8 @@ package com.hcltech.sample.reactive.webflux.filter.antipattern;
 
 import com.hcltech.sample.reactive.webflux.ctx.TenantContext;
 import com.hcltech.sample.reactive.webflux.ctx.TenantContextHolder;
+import com.hcltech.sample.reactive.webflux.filter.HeaderResolver;
+import com.hcltech.sample.reactive.webflux.filter.policy.TenantIdentifierExclusionPolicy;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,8 +12,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 import org.springframework.mock.http.server.reactive.MockServerHttpRequest;
 import org.springframework.mock.web.server.MockServerWebExchange;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
@@ -29,7 +33,7 @@ class TenantIdentifierFilterTest {
 
     private static final String TENANT_ID_HEADER = "X-Tenant-ID";
 
-    private final TenantIdentifierFilter filter = new TenantIdentifierFilter();
+    private final TenantIdentifierFilter filter = new TenantIdentifierFilter(new TenantIdentifierExclusionPolicy(), new HeaderResolver());
 
     @Mock
     private WebFilterChain chain;
@@ -58,7 +62,9 @@ class TenantIdentifierFilterTest {
         ServerWebExchange exchange = MockServerWebExchange.from(MockServerHttpRequest.get("/orders").build());
 
         StepVerifier.create(filter.filter(exchange, chain))
-                .verifyError(IllegalArgumentException.class);
+                .verifyErrorMatches(throwable -> throwable instanceof ResponseStatusException &&
+                        ((ResponseStatusException) throwable).getStatusCode() == HttpStatus.BAD_REQUEST &&
+                        "Tenant ID is required in the request headers.".equals(((ResponseStatusException) throwable).getReason()));
     }
 
     @ParameterizedTest
@@ -68,7 +74,9 @@ class TenantIdentifierFilterTest {
                 MockServerHttpRequest.get("/orders").header(TENANT_ID_HEADER, tenantId));
 
         StepVerifier.create(filter.filter(exchange, chain))
-                .verifyError(IllegalArgumentException.class);
+                .verifyErrorMatches(throwable -> throwable instanceof ResponseStatusException &&
+                        ((ResponseStatusException) throwable).getStatusCode() == HttpStatus.BAD_REQUEST &&
+                        "Tenant ID is required in the request headers.".equals(((ResponseStatusException) throwable).getReason()));
     }
 
     @Test
@@ -76,7 +84,10 @@ class TenantIdentifierFilterTest {
         ServerWebExchange exchange = MockServerWebExchange.from(
                 MockServerHttpRequest.get("/orders").header(TENANT_ID_HEADER, "not-a-number"));
 
-        assertThrows(NumberFormatException.class, () -> filter.filter(exchange, chain));
+        StepVerifier.create(filter.filter(exchange, chain))
+                .verifyErrorMatches(throwable -> throwable instanceof ResponseStatusException &&
+                        ((ResponseStatusException) throwable).getStatusCode() == HttpStatus.BAD_REQUEST &&
+                        "Tenant ID must be a valid long value.".equals(((ResponseStatusException) throwable).getReason()));
     }
 
     @Test

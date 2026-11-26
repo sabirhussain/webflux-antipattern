@@ -22,7 +22,7 @@ import java.util.Optional;
 @AntiPattern
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-    private final Scheduler scheduler;
+    private final Scheduler userServiceScheduler;
 
     @Override
     public Flux<UserDto> getAllUsers() {
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
                 .switchIfEmpty(Mono.error(new TenantContextMissingException("Tenant context is missing")))
                 .map(TenantContext::tenantId).doOnNext(tenantId -> log.info("Tenant ID from context: {}", tenantId))
                 .flatMapMany(tenantId -> Flux.fromIterable(userRepository.findAllByTenantId(tenantId)).map(UserDto::from))
-                .subscribeOn(scheduler);
+                .subscribeOn(userServiceScheduler);
 
         /*
         Context retrieval happen when getAllUsers is called, not when the publisher is subscribed to.

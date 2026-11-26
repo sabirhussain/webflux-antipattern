@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "label": "com.hcltech.sample.reactive:webflux-antipattern",
+      "file_type": "code",
+      "type": "package",
+      "ecosystem": "maven",
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "version": "0.0.1-SNAPSHOT"
+    }
+  ],
+  "edges": [
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_h2console",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_data_jpa",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_actuator",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_webflux",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springdoc_springdoc_openapi_starter_webflux_ui",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_devtools",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_com_h2database_h2",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_projectlombok_lombok",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_actuator_test",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_data_jpa_test",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pkg_com_hcltech_sample_reactive_webflux_antipattern",
+      "target": "pkg_org_springframework_boot_spring_boot_starter_webflux_test",
+      "relation": "depends_on",
+      "context": "dependency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pom.xml",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}
