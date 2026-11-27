@@ -1,1 +1,184 @@
-{"nodes": [{"id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "label": "RecommendedTest.java", "file_type": "code", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L1"}, {"id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest", "label": "RecommendedTest", "file_type": "code", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L8", "_callable": true, "_callable_class": true}, {"id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "label": ".shouldExposesExpectedSpringMetadata()", "file_type": "code", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L9", "_callable": true}, {"id": "test", "label": "Test", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java"}, {"id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample", "label": "Sample", "file_type": "code", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L17", "_callable": true, "_callable_class": true}, {"id": "recommended", "label": "Recommended", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java"}], "edges": [{"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "target": "assertions", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L3", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "target": "test", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L4", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "target": "profile", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L5", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "target": "annotatedelementutils", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L6", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java", "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest", "relation": "contains", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L8", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest", "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "relation": "method", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L9", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "target": "test", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L9", "weight": 1.0, "context": "attribute"}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest", "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample", "relation": "contains", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L17", "weight": 1.0}, {"source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample", "target": "recommended", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L17", "weight": 1.0, "context": "attribute"}], "raw_calls": [{"caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "callee": "findMergedAnnotation", "is_member_call": true, "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L11", "receiver": "AnnotatedElementUtils", "lang": "java", "receiver_unbound": true}, {"caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "callee": "assertNotNull", "is_member_call": true, "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L13", "receiver": "Assertions", "lang": "java", "receiver_unbound": true}, {"caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "callee": "assertEquals", "is_member_call": true, "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L14", "receiver": "Assertions", "lang": "java", "receiver_unbound": true}, {"caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata", "callee": "value", "is_member_call": true, "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java", "source_location": "L14", "receiver": "profile", "lang": "java", "receiver_type": "Profile"}]}
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "label": "RecommendedTest.java",
+      "file_type": "code",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest",
+      "label": "RecommendedTest",
+      "file_type": "code",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "label": ".shouldExposesExpectedSpringMetadata()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L9",
+      "_callable": true
+    },
+    {
+      "id": "test",
+      "label": "Test",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java"
+    },
+    {
+      "id": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample",
+      "label": "Sample",
+      "file_type": "code",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L17",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "recommended",
+      "label": "Recommended",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java"
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "target": "assertions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "target": "test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "target": "profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "target": "annotatedelementutils",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_java",
+      "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest",
+      "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "target": "test",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest",
+      "target": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_sample",
+      "target": "recommended",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "attribute"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "callee": "findMergedAnnotation",
+      "is_member_call": true,
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L11",
+      "receiver": "AnnotatedElementUtils",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "callee": "assertNotNull",
+      "is_member_call": true,
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L13",
+      "receiver": "Assertions",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "callee": "assertEquals",
+      "is_member_call": true,
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L14",
+      "receiver": "Assertions",
+      "lang": "java",
+      "receiver_unbound": true
+    },
+    {
+      "caller_nid": "$graphify-root$_src_test_java_com_hcltech_sample_reactive_webflux_annotation_recommendedtest_recommendedtest_shouldexposesexpectedspringmetadata",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "src/test/java/com/hcltech/sample/reactive/webflux/annotation/RecommendedTest.java",
+      "source_location": "L14",
+      "receiver": "profile",
+      "lang": "java",
+      "receiver_type": "Profile"
+    }
+  ]
+}

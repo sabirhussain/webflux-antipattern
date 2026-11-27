@@ -1,1 +1,901 @@
-{"nodes": [{"id": "readme_webflux_antipattern_project", "label": "webflux-antipattern README", "file_type": "document", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_multi_tenant_context_propagation", "label": "Multi-tenant context propagation", "file_type": "concept", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "WebFlux execution hops across threads (subscribeOn, thread pools, event-loop workers), so per-thread state such as ThreadLocal cannot reliably carry request-scoped state like the current tenant through a reactive pipeline."}, {"id": "readme_threadlocal_antipattern", "label": "Antipattern 1: ThreadLocal/InheritableThreadLocal for request-scoped state", "file_type": "rationale", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "The filter stores the tenant in a ThreadLocal and relies on it still being present, but WebFlux hops threads (subscribeOn, pooled schedulers) and a plain ThreadLocal does not travel with the execution."}, {"id": "readme_stale_pooled_thread_context_antipattern", "label": "Antipattern 2: Stale data from reusing a pooled thread's inherited context", "file_type": "rationale", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "An InheritableThreadLocal is copied only once, when a worker thread is created; a pooled boundedElastic worker that inherited tenant A keeps serving tenant A's data after the request thread moved to tenant B, returning wrong-tenant data rather than an error."}, {"id": "readme_eager_evaluation_antipattern", "label": "Antipattern 3: Eager evaluation of per-subscription state", "file_type": "rationale", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "getUser(long id) reads the tenant context synchronously at call time, before the Mono is built; if the context changes before subscription, the stale already-baked-in tenant is used."}, {"id": "readme_reactor_context", "label": "Reactor Context propagation (contextWrite)", "file_type": "rationale", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "Reactor Context travels with the subscription instead of the thread, so request-scoped state survives thread hand-off regardless of which thread executes the work."}, {"id": "readme_lazy_resolution_defer", "label": "Lazy resolution via Mono.defer / Mono.deferContextual", "file_type": "rationale", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "Deferring resolution means the tenant is read at subscription time (per-subscription, not per-call), making it immune to thread hand-off and to context changes between call and subscription."}, {"id": "readme_spring_profile_switching", "label": "Runtime switching via Spring profiles (antipattern / recommended)", "file_type": "concept", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "The same feature is implemented twice, wrong way and recommended way, and selected at runtime by profile; application.yaml defaults spring.profiles.default to antipattern."}, {"id": "readme_tenantidentifierfilter_antipattern", "label": "filter.antipattern.TenantIdentifierFilter", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantidentifierfilter_recommended", "label": "filter.recommended.TenantIdentifierFilter", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantidentifierexclusionpolicy", "label": "filter.policy.TenantIdentifierExclusionPolicy", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_headerresolver", "label": "filter.HeaderResolver", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_userserviceimpl_antipattern", "label": "service.antipattern.UserServiceImpl", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_userserviceimpl_recommended", "label": "service.recommended.UserServiceImpl", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantcontext", "label": "ctx.TenantContext", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantcontextholder", "label": "ctx.TenantContextHolder", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantcontextmissingexception", "label": "TenantContextMissingException", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_userresource", "label": "resource.UserResource", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_tenantresource", "label": "resource.TenantResource", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_schedulerconfig", "label": "config.SchedulerConfig", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_antipattern_annotation", "label": "annotation.AntiPattern", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_recommended_annotation", "label": "annotation.Recommended", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_antipatterntest", "label": "AntiPatternTest", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_recommendedtest", "label": "RecommendedTest", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_userserviceimpltest", "label": "service/antipattern/UserServiceImplTest", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_userresource_it", "label": "resource/UserResource_IT", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_webfluxantipatternapplication_it", "label": "WebfluxAntipatternApplication_IT", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_deterministicschedulertestconfig", "label": "DeterministicSchedulerTestConfig", "file_type": "code", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}, {"id": "readme_integration_tests_profile", "label": "integration-tests Maven profile (Failsafe, _IT classes)", "file_type": "concept", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "_IT classes boot a real Spring context and HTTP server and are wired through Failsafe so they only run under the integration-tests profile and never slow ./mvnw test."}, {"id": "readme_demonstrate_antipattern_command", "label": "Demonstrate antipattern command (curl with alternating X-Tenant-ID)", "file_type": "concept", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null, "rationale": "Which pooled worker picks up a request is non-deterministic, so output varies between runs: either a 500 (context lost) or a 200 with tenant 1's users for tenant 2's request (wrong data)."}], "edges": [{"source": "readme_webflux_antipattern_project", "target": "readme_multi_tenant_context_propagation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_webflux_antipattern_project", "target": "readme_spring_profile_switching", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_threadlocal_antipattern", "target": "readme_multi_tenant_context_propagation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_reactor_context", "target": "readme_multi_tenant_context_propagation", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_threadlocal_antipattern", "target": "readme_tenantidentifierfilter_antipattern", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_stale_pooled_thread_context_antipattern", "target": "readme_userserviceimpl_antipattern", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_eager_evaluation_antipattern", "target": "readme_userserviceimpl_antipattern", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_reactor_context", "target": "readme_tenantidentifierfilter_recommended", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_lazy_resolution_defer", "target": "readme_userserviceimpl_recommended", "relation": "rationale_for", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_stale_pooled_thread_context_antipattern", "target": "readme_threadlocal_antipattern", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_reactor_context", "target": "readme_threadlocal_antipattern", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_lazy_resolution_defer", "target": "readme_eager_evaluation_antipattern", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_lazy_resolution_defer", "target": "readme_reactor_context", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantcontextholder", "target": "readme_reactor_context", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_antipattern", "target": "readme_tenantcontextholder", "relation": "calls", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_antipattern", "target": "readme_tenantcontextholder", "relation": "calls", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_recommended", "target": "readme_tenantcontext", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_recommended", "target": "readme_tenantcontext", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantcontextholder", "target": "readme_tenantcontext", "relation": "shares_data_with", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_antipattern", "target": "readme_tenantidentifierexclusionpolicy", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_recommended", "target": "readme_tenantidentifierexclusionpolicy", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_antipattern", "target": "readme_headerresolver", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_recommended", "target": "readme_headerresolver", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_antipattern", "target": "readme_tenantidentifierfilter_recommended", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_antipattern", "target": "readme_userserviceimpl_recommended", "relation": "conceptually_related_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_antipattern", "target": "readme_schedulerconfig", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_recommended", "target": "readme_schedulerconfig", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource", "target": "readme_userserviceimpl_antipattern", "relation": "calls", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource", "target": "readme_userserviceimpl_recommended", "relation": "calls", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantresource", "target": "readme_tenantidentifierexclusionpolicy", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_antipattern", "target": "readme_antipattern_annotation", "relation": "references", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_antipattern", "target": "readme_antipattern_annotation", "relation": "references", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantidentifierfilter_recommended", "target": "readme_recommended_annotation", "relation": "references", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpl_recommended", "target": "readme_recommended_annotation", "relation": "references", "confidence": "INFERRED", "confidence_score": 0.95, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_antipattern_annotation", "target": "readme_spring_profile_switching", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_recommended_annotation", "target": "readme_spring_profile_switching", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_antipatterntest", "target": "readme_antipattern_annotation", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_recommendedtest", "target": "readme_recommended_annotation", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpltest", "target": "readme_userserviceimpl_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpltest", "target": "readme_stale_pooled_thread_context_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userserviceimpltest", "target": "readme_eager_evaluation_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_userresource", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_schedulerconfig", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_deterministicschedulertestconfig", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_userserviceimpltest", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_spring_profile_switching", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_userresource_it", "target": "readme_integration_tests_profile", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_webfluxantipatternapplication_it", "target": "readme_integration_tests_profile", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_tenantcontextmissingexception", "target": "readme_threadlocal_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_demonstrate_antipattern_command", "target": "readme_threadlocal_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}, {"source": "readme_demonstrate_antipattern_command", "target": "readme_stale_pooled_thread_context_antipattern", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md", "source_location": null, "weight": 1.0}], "hyperedges": [{"id": "readme_antipattern_profile_code_path", "label": "Antipattern-profile code path (ThreadLocal-based tenant propagation)", "nodes": ["readme_tenantidentifierfilter_antipattern", "readme_userserviceimpl_antipattern", "readme_tenantcontextholder", "readme_antipattern_annotation"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md"}, {"id": "readme_recommended_profile_code_path", "label": "Recommended-profile code path (Reactor Context tenant propagation)", "nodes": ["readme_tenantidentifierfilter_recommended", "readme_userserviceimpl_recommended", "readme_tenantcontext", "readme_reactor_context", "readme_recommended_annotation"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md"}, {"id": "readme_three_antipatterns_and_shared_fix", "label": "Three tenant-context antipatterns and their shared Reactor Context / lazy-resolution fix", "nodes": ["readme_threadlocal_antipattern", "readme_stale_pooled_thread_context_antipattern", "readme_eager_evaluation_antipattern", "readme_reactor_context", "readme_lazy_resolution_defer"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "README.md"}]}
+{
+  "nodes": [
+    {
+      "id": "readme_webflux_antipattern_project",
+      "label": "webflux-antipattern README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_multi_tenant_context_propagation",
+      "label": "Multi-tenant context propagation",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "WebFlux execution hops across threads (subscribeOn, thread pools, event-loop workers), so per-thread state such as ThreadLocal cannot reliably carry request-scoped state like the current tenant through a reactive pipeline."
+    },
+    {
+      "id": "readme_threadlocal_antipattern",
+      "label": "Antipattern 1: ThreadLocal/InheritableThreadLocal for request-scoped state",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "The filter stores the tenant in a ThreadLocal and relies on it still being present, but WebFlux hops threads (subscribeOn, pooled schedulers) and a plain ThreadLocal does not travel with the execution."
+    },
+    {
+      "id": "readme_stale_pooled_thread_context_antipattern",
+      "label": "Antipattern 2: Stale data from reusing a pooled thread's inherited context",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "An InheritableThreadLocal is copied only once, when a worker thread is created; a pooled boundedElastic worker that inherited tenant A keeps serving tenant A's data after the request thread moved to tenant B, returning wrong-tenant data rather than an error."
+    },
+    {
+      "id": "readme_eager_evaluation_antipattern",
+      "label": "Antipattern 3: Eager evaluation of per-subscription state",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "getUser(long id) reads the tenant context synchronously at call time, before the Mono is built; if the context changes before subscription, the stale already-baked-in tenant is used."
+    },
+    {
+      "id": "readme_reactor_context",
+      "label": "Reactor Context propagation (contextWrite)",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Reactor Context travels with the subscription instead of the thread, so request-scoped state survives thread hand-off regardless of which thread executes the work."
+    },
+    {
+      "id": "readme_lazy_resolution_defer",
+      "label": "Lazy resolution via Mono.defer / Mono.deferContextual",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Deferring resolution means the tenant is read at subscription time (per-subscription, not per-call), making it immune to thread hand-off and to context changes between call and subscription."
+    },
+    {
+      "id": "readme_spring_profile_switching",
+      "label": "Runtime switching via Spring profiles (antipattern / recommended)",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "The same feature is implemented twice, wrong way and recommended way, and selected at runtime by profile; application.yaml defaults spring.profiles.default to antipattern."
+    },
+    {
+      "id": "readme_tenantidentifierfilter_antipattern",
+      "label": "filter.antipattern.TenantIdentifierFilter",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantidentifierfilter_recommended",
+      "label": "filter.recommended.TenantIdentifierFilter",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantidentifierexclusionpolicy",
+      "label": "filter.policy.TenantIdentifierExclusionPolicy",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_headerresolver",
+      "label": "filter.HeaderResolver",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_userserviceimpl_antipattern",
+      "label": "service.antipattern.UserServiceImpl",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_userserviceimpl_recommended",
+      "label": "service.recommended.UserServiceImpl",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantcontext",
+      "label": "ctx.TenantContext",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantcontextholder",
+      "label": "ctx.TenantContextHolder",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantcontextmissingexception",
+      "label": "TenantContextMissingException",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_userresource",
+      "label": "resource.UserResource",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_tenantresource",
+      "label": "resource.TenantResource",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_schedulerconfig",
+      "label": "config.SchedulerConfig",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_antipattern_annotation",
+      "label": "annotation.AntiPattern",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_recommended_annotation",
+      "label": "annotation.Recommended",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_antipatterntest",
+      "label": "AntiPatternTest",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_recommendedtest",
+      "label": "RecommendedTest",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_userserviceimpltest",
+      "label": "service/antipattern/UserServiceImplTest",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_userresource_it",
+      "label": "resource/UserResource_IT",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_webfluxantipatternapplication_it",
+      "label": "WebfluxAntipatternApplication_IT",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_deterministicschedulertestconfig",
+      "label": "DeterministicSchedulerTestConfig",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_integration_tests_profile",
+      "label": "integration-tests Maven profile (Failsafe, _IT classes)",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "_IT classes boot a real Spring context and HTTP server and are wired through Failsafe so they only run under the integration-tests profile and never slow ./mvnw test."
+    },
+    {
+      "id": "readme_demonstrate_antipattern_command",
+      "label": "Demonstrate antipattern command (curl with alternating X-Tenant-ID)",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Which pooled worker picks up a request is non-deterministic, so output varies between runs: either a 500 (context lost) or a 200 with tenant 1's users for tenant 2's request (wrong data)."
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_webflux_antipattern_project",
+      "target": "readme_multi_tenant_context_propagation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_webflux_antipattern_project",
+      "target": "readme_spring_profile_switching",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_threadlocal_antipattern",
+      "target": "readme_multi_tenant_context_propagation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_reactor_context",
+      "target": "readme_multi_tenant_context_propagation",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_threadlocal_antipattern",
+      "target": "readme_tenantidentifierfilter_antipattern",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_stale_pooled_thread_context_antipattern",
+      "target": "readme_userserviceimpl_antipattern",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_eager_evaluation_antipattern",
+      "target": "readme_userserviceimpl_antipattern",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_reactor_context",
+      "target": "readme_tenantidentifierfilter_recommended",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_lazy_resolution_defer",
+      "target": "readme_userserviceimpl_recommended",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_stale_pooled_thread_context_antipattern",
+      "target": "readme_threadlocal_antipattern",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_reactor_context",
+      "target": "readme_threadlocal_antipattern",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_lazy_resolution_defer",
+      "target": "readme_eager_evaluation_antipattern",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_lazy_resolution_defer",
+      "target": "readme_reactor_context",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantcontextholder",
+      "target": "readme_reactor_context",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_antipattern",
+      "target": "readme_tenantcontextholder",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_antipattern",
+      "target": "readme_tenantcontextholder",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_recommended",
+      "target": "readme_tenantcontext",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_recommended",
+      "target": "readme_tenantcontext",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantcontextholder",
+      "target": "readme_tenantcontext",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_antipattern",
+      "target": "readme_tenantidentifierexclusionpolicy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_recommended",
+      "target": "readme_tenantidentifierexclusionpolicy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_antipattern",
+      "target": "readme_headerresolver",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_recommended",
+      "target": "readme_headerresolver",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_antipattern",
+      "target": "readme_tenantidentifierfilter_recommended",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_antipattern",
+      "target": "readme_userserviceimpl_recommended",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_antipattern",
+      "target": "readme_schedulerconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_recommended",
+      "target": "readme_schedulerconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource",
+      "target": "readme_userserviceimpl_antipattern",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource",
+      "target": "readme_userserviceimpl_recommended",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantresource",
+      "target": "readme_tenantidentifierexclusionpolicy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_antipattern",
+      "target": "readme_antipattern_annotation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_antipattern",
+      "target": "readme_antipattern_annotation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantidentifierfilter_recommended",
+      "target": "readme_recommended_annotation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpl_recommended",
+      "target": "readme_recommended_annotation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_antipattern_annotation",
+      "target": "readme_spring_profile_switching",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_recommended_annotation",
+      "target": "readme_spring_profile_switching",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_antipatterntest",
+      "target": "readme_antipattern_annotation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_recommendedtest",
+      "target": "readme_recommended_annotation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpltest",
+      "target": "readme_userserviceimpl_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpltest",
+      "target": "readme_stale_pooled_thread_context_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userserviceimpltest",
+      "target": "readme_eager_evaluation_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_userresource",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_schedulerconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_deterministicschedulertestconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_userserviceimpltest",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_spring_profile_switching",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_userresource_it",
+      "target": "readme_integration_tests_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_webfluxantipatternapplication_it",
+      "target": "readme_integration_tests_profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_tenantcontextmissingexception",
+      "target": "readme_threadlocal_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_demonstrate_antipattern_command",
+      "target": "readme_threadlocal_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_demonstrate_antipattern_command",
+      "target": "readme_stale_pooled_thread_context_antipattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "readme_antipattern_profile_code_path",
+      "label": "Antipattern-profile code path (ThreadLocal-based tenant propagation)",
+      "nodes": [
+        "readme_tenantidentifierfilter_antipattern",
+        "readme_userserviceimpl_antipattern",
+        "readme_tenantcontextholder",
+        "readme_antipattern_annotation"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "id": "readme_recommended_profile_code_path",
+      "label": "Recommended-profile code path (Reactor Context tenant propagation)",
+      "nodes": [
+        "readme_tenantidentifierfilter_recommended",
+        "readme_userserviceimpl_recommended",
+        "readme_tenantcontext",
+        "readme_reactor_context",
+        "readme_recommended_annotation"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "id": "readme_three_antipatterns_and_shared_fix",
+      "label": "Three tenant-context antipatterns and their shared Reactor Context / lazy-resolution fix",
+      "nodes": [
+        "readme_threadlocal_antipattern",
+        "readme_stale_pooled_thread_context_antipattern",
+        "readme_eager_evaluation_antipattern",
+        "readme_reactor_context",
+        "readme_lazy_resolution_defer"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    }
+  ]
+}

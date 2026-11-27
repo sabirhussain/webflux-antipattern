@@ -1,1 +1,136 @@
-{"nodes": [{"id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "label": "AntiPattern.java", "file_type": "code", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L1"}, {"id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern", "label": "AntiPattern", "file_type": "code", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L10", "_callable": true, "_callable_class": true}, {"id": "target", "label": "Target", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"}, {"id": "retention", "label": "Retention", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"}, {"id": "profile", "label": "Profile", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"}], "edges": [{"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "profile", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L3", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "elementtype", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L5", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "retention", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L6", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "retentionpolicy", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L7", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "target", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L8", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java", "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern", "relation": "contains", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L10", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern", "target": "target", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L10", "weight": 1.0, "context": "attribute"}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern", "target": "retention", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L10", "weight": 1.0, "context": "attribute"}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern", "target": "profile", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java", "source_location": "L10", "weight": 1.0, "context": "attribute"}], "raw_calls": []}
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "label": "AntiPattern.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern",
+      "label": "AntiPattern",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L10",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "target",
+      "label": "Target",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"
+    },
+    {
+      "id": "retention",
+      "label": "Retention",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"
+    },
+    {
+      "id": "profile",
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java"
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "elementtype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "retention",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "retentionpolicy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "target",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern",
+      "target": "target",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern",
+      "target": "retention",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_annotation_antipattern_antipattern",
+      "target": "profile",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/annotation/AntiPattern.java",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "attribute"
+    }
+  ],
+  "raw_calls": []
+}
