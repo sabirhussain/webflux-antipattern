@@ -1,1 +1,314 @@
-{"nodes": [{"id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "label": "OpenAPIConfig.java", "file_type": "code", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L1"}, {"id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig", "label": "OpenAPIConfig", "file_type": "code", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L9", "_callable": true, "_callable_class": true}, {"id": "configuration", "label": "Configuration", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"}, {"id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "label": ".openAPI()", "file_type": "code", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L12", "_java_ret": "OpenAPI", "_callable": true}, {"id": "openapi", "label": "OpenAPI", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"}, {"id": "bean", "label": "Bean", "file_type": "code", "source_file": "", "source_location": "", "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"}], "edges": [{"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "components", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L3", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "openapi", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L4", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "parameter", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L5", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "bean", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L6", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "configuration", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L7", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java", "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig", "relation": "contains", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L9", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig", "target": "configuration", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L9", "weight": 1.0, "context": "attribute"}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig", "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "relation": "method", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L12", "weight": 1.0}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "target": "openapi", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L12", "weight": 1.0, "context": "return_type"}, {"source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "target": "bean", "relation": "references", "confidence": "EXTRACTED", "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L12", "weight": 1.0, "context": "attribute"}], "raw_calls": [{"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "addParameters", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L14", "receiver": null, "lang": "java", "java_receiver_chain": ["type", "Components"]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "Components", "is_member_call": false, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L14", "receiver": null, "lang": "java"}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "example", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java", "java_receiver_chain": ["call", "description", ["call", "required", ["call", "name", ["call", "in", ["type", "Parameter"]]]]]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "description", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java", "java_receiver_chain": ["call", "required", ["call", "name", ["call", "in", ["type", "Parameter"]]]]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "required", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java", "java_receiver_chain": ["call", "name", ["call", "in", ["type", "Parameter"]]]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "name", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java", "java_receiver_chain": ["call", "in", ["type", "Parameter"]]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "in", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java", "java_receiver_chain": ["type", "Parameter"]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "Parameter", "is_member_call": false, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L15", "receiver": null, "lang": "java"}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "components", "is_member_call": true, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L21", "receiver": null, "lang": "java", "java_receiver_chain": ["type", "OpenAPI"]}, {"caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi", "callee": "OpenAPI", "is_member_call": false, "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java", "source_location": "L21", "receiver": null, "via_stub": true, "lang": "java"}]}
+{
+  "nodes": [
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "label": "OpenAPIConfig.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig",
+      "label": "OpenAPIConfig",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L9",
+      "_callable": true,
+      "_callable_class": true
+    },
+    {
+      "id": "configuration",
+      "label": "Configuration",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"
+    },
+    {
+      "id": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "label": ".openAPI()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L12",
+      "_java_ret": "OpenAPI",
+      "_callable": true
+    },
+    {
+      "id": "openapi",
+      "label": "OpenAPI",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"
+    },
+    {
+      "id": "bean",
+      "label": "Bean",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "$graphify-root$/src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java"
+    }
+  ],
+  "edges": [
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "components",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "openapi",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "parameter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "bean",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "configuration",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_java",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig",
+      "target": "configuration",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "attribute"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig",
+      "target": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "target": "openapi",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "target": "bean",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "attribute"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "addParameters",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L14",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "type",
+        "Components"
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "Components",
+      "is_member_call": false,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L14",
+      "receiver": null,
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "example",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "description",
+        [
+          "call",
+          "required",
+          [
+            "call",
+            "name",
+            [
+              "call",
+              "in",
+              [
+                "type",
+                "Parameter"
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "description",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "required",
+        [
+          "call",
+          "name",
+          [
+            "call",
+            "in",
+            [
+              "type",
+              "Parameter"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "required",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "name",
+        [
+          "call",
+          "in",
+          [
+            "type",
+            "Parameter"
+          ]
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "name",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "call",
+        "in",
+        [
+          "type",
+          "Parameter"
+        ]
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "in",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "type",
+        "Parameter"
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "Parameter",
+      "is_member_call": false,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L15",
+      "receiver": null,
+      "lang": "java"
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "components",
+      "is_member_call": true,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L21",
+      "receiver": null,
+      "lang": "java",
+      "java_receiver_chain": [
+        "type",
+        "OpenAPI"
+      ]
+    },
+    {
+      "caller_nid": "$graphify-root$_src_main_java_com_hcltech_sample_reactive_webflux_config_openapiconfig_openapiconfig_openapi",
+      "callee": "OpenAPI",
+      "is_member_call": false,
+      "source_file": "src/main/java/com/hcltech/sample/reactive/webflux/config/OpenAPIConfig.java",
+      "source_location": "L21",
+      "receiver": null,
+      "via_stub": true,
+      "lang": "java"
+    }
+  ]
+}
